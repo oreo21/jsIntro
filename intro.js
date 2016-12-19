@@ -1,6 +1,9 @@
 var button = document.getElementById("b");
+var buttonz = document.getElementById("uav");
 var list = document.getElementById("thelist");
+var lista = document.getElementById("list");
 var listSub = document.getElementsByTagName("li");
+var lia = document.getElementsByTagName("dl");
 var h = document.getElementById("h");
 
 var addNode = function(e){
@@ -31,4 +34,28 @@ for (var i = 0; i < len; i++){
 }
 
 button.addEventListener('click', addNode);
-    
+
+var fib = function(e, ma, ge){
+    if(e <= 2){
+       return ma;
+    }
+    else{
+       return fib(e-1, ma + ge , ma);
+    }        
+}
+
+var addNodes = function(e){
+    console.log(e);
+    var g = fib(lia.length+1, 1, 1).toString();
+    var node = document.createElement("dl");
+    var text = document.createTextNode(g);
+    node.appendChild(text);
+    itemFunctions(node);
+    lista.appendChild(node);
+}
+
+
+buttonz.addEventListener('click', addNodes);
+
+
+
